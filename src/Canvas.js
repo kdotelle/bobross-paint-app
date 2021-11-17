@@ -7,9 +7,11 @@ import "./styles/CanvasStyles.css";
 function Canvas() {
   const [canvas, setBrush] = useState("#FCA5A5");
   const [brush, setThick] = useState(50);
+
   return (
     <div>
       <h1>Canvas Component</h1>
+
       <CanvasDraw
         className="canvas"
         hideGrid
