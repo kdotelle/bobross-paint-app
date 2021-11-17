@@ -1,0 +1,9 @@
+.canvas {
+  display: block;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  margin: 5rem;
+  height: 75vh;
+  width: auto;
+}
