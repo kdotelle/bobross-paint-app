@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Canvas from "./Canvas.js";
+import "./styles/NewCanvasFormStyles.css";
 
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -7,22 +8,18 @@ import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
+import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import { ColorPicker, useColor } from "react-color-palette";
+import "react-color-palette/lib/css/styles.css";
 
 function NewCanvasForm() {
-  const drawerWidth = 240;
+  const drawerWidth = 280;
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,6 +48,7 @@ function NewCanvasForm() {
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
+      height: "100vh",
     },
     drawerPaper: {
       width: drawerWidth,
@@ -79,10 +77,14 @@ function NewCanvasForm() {
       }),
       marginLeft: 0,
     },
+    picker: {
+      marginTop: "2rem",
+    },
   }));
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  //drawer state
+  const [open, setOpen] = React.useState(true);
   //color picker state
   const [color, setColor] = useColor("hex", "#121212");
 
@@ -139,12 +141,11 @@ function NewCanvasForm() {
           </div>
           <Divider />
           <ColorPicker
-            width={456}
+            width={drawerWidth}
             height={228}
             color={color}
             onChange={setColor}
             hideHSV
-            dark
           />
         </Drawer>
         <main

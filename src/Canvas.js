@@ -10,8 +10,6 @@ function Canvas() {
 
   return (
     <div>
-      <h1>Canvas Component</h1>
-
       <CanvasDraw
         className="canvas"
         hideGrid
