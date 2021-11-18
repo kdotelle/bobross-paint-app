@@ -157,9 +157,9 @@ function NewCanvasForm() {
           })}
         >
           <div className={classes.drawerHeader} />
+          <Canvas brushColor={color.hex} />
         </main>
       </div>
-      <Canvas brushColor={color.hex} />
     </div>
   );
 }
