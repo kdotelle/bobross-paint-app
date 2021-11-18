@@ -10,11 +10,12 @@ function Canvas(props) {
       <CanvasDraw
         className="canvas"
         hideGrid
-        canvasWidth="300"
+        canvasWidth="400"
         canvasHeight="400"
         lazyRadius="0"
         enablePanAndZoom
         brushColor={props.brushColor}
+        brushRadius={props.brushRadius}
       />
     </div>
   );

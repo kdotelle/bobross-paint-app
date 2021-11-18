@@ -15,6 +15,12 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Slider from "@mui/material/Slider";
+import VolumeDown from "@mui/icons-material/VolumeDown";
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
+
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 
@@ -90,6 +96,12 @@ function NewCanvasForm() {
   //canvas state
   const [canvas, setBrush] = useState("#FCA5A5");
   const [brush, setThick] = useState(50);
+  //slider state
+  const [value, setValue] = React.useState(12);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -150,6 +162,21 @@ function NewCanvasForm() {
             onChange={setColor}
             hideHSV
           />
+          <Typography>Brush Size</Typography>
+          <Box sx={{ width: 200 }}>
+            <Stack
+              spacing={2}
+              direction="row"
+              sx={{ mb: 1 }}
+              alignItems="center"
+            >
+              <Slider
+                aria-label="Volume"
+                value={value}
+                onChange={handleChange}
+              />
+            </Stack>
+          </Box>
         </Drawer>
         <main
           className={clsx(classes.content, {
@@ -157,7 +184,7 @@ function NewCanvasForm() {
           })}
         >
           <div className={classes.drawerHeader} />
-          <Canvas brushColor={color.hex} />
+          <Canvas brushColor={color.hex} brushRadius={value} />
         </main>
       </div>
     </div>
