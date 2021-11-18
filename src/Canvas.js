@@ -4,10 +4,7 @@ import CanvasDraw from "react-canvas-draw";
 
 import "./styles/CanvasStyles.css";
 
-function Canvas() {
-  const [canvas, setBrush] = useState("#FCA5A5");
-  const [brush, setThick] = useState(50);
-
+function Canvas(props) {
   return (
     <div>
       <CanvasDraw
@@ -17,6 +14,7 @@ function Canvas() {
         canvasHeight="400"
         lazyRadius="0"
         enablePanAndZoom
+        brushColor={props.brushColor}
       />
     </div>
   );

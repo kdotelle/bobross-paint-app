@@ -87,6 +87,9 @@ function NewCanvasForm() {
   const [open, setOpen] = React.useState(true);
   //color picker state
   const [color, setColor] = useColor("hex", "#121212");
+  //canvas state
+  const [canvas, setBrush] = useState("#FCA5A5");
+  const [brush, setThick] = useState(50);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -156,7 +159,7 @@ function NewCanvasForm() {
           <div className={classes.drawerHeader} />
         </main>
       </div>
-      <Canvas />
+      <Canvas brushColor={color.hex} />
     </div>
   );
 }
