@@ -18,6 +18,8 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
+import BrushIcon from "@mui/icons-material/Brush";
+import FormatPaintIcon from "@mui/icons-material/FormatPaint";
 
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
@@ -80,6 +82,12 @@ function NewCanvasForm() {
         duration: theme.transitions.duration.enteringScreen,
       }),
       marginLeft: 0,
+    },
+    buttons: {
+      width: "100%",
+    },
+    button: {
+      width: "50%",
     },
   }));
   const classes = useStyles();
@@ -182,12 +190,24 @@ function NewCanvasForm() {
                 onChange={handleChange}
               />
             </Stack>
-            <Button variant="contained" onClick={erase}>
-              Erase
-            </Button>
-            <Button variant="contained" onClick={draw}>
-              Draw
-            </Button>
+            <div className={classes.buttons}>
+              <Button
+                className={classes.button}
+                variant="contained"
+                onClick={erase}
+                startIcon={<FormatPaintIcon />}
+              >
+                Erase
+              </Button>
+              <Button
+                className={classes.button}
+                variant="contained"
+                onClick={draw}
+                startIcon={<BrushIcon />}
+              >
+                Draw
+              </Button>
+            </div>
           </Box>
         </Drawer>
         <main

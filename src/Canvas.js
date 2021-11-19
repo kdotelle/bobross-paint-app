@@ -21,24 +21,28 @@ function Canvas(props) {
         brushColor={props.brushColor}
         brushRadius={props.brushRadius}
       />
-      <Button
-        onClick={() => {
-          myRef.current.clear();
-        }}
-        variant="contained"
-        color="primary"
-      >
-        Clear
-      </Button>
-      <Button
-        onClick={() => {
-          myRef.current.undo();
-        }}
-        variant="contained"
-        color="secondary"
-      >
-        Undo
-      </Button>
+      <div className="canvasButtonWrapper">
+        <Button
+          className="canvasButtons"
+          onClick={() => {
+            myRef.current.clear();
+          }}
+          variant="contained"
+          color="primary"
+        >
+          Clear
+        </Button>
+        <Button
+          className="canvasButtons"
+          onClick={() => {
+            myRef.current.undo();
+          }}
+          variant="contained"
+          color="secondary"
+        >
+          Undo
+        </Button>
+      </div>
     </div>
   );
 }

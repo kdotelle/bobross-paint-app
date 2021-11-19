@@ -8,3 +8,10 @@
   margin: 5rem;
   height: 75vh;
 }
+.canvasButtonWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.canvasButtons {
+  width: 25%;
+}
