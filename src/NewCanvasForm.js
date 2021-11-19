@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Canvas from "./Canvas.js";
 import "./styles/NewCanvasFormStyles.css";
 
@@ -18,8 +18,6 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
-import VolumeDown from "@mui/icons-material/VolumeDown";
-import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
@@ -83,9 +81,6 @@ function NewCanvasForm() {
       }),
       marginLeft: 0,
     },
-    picker: {
-      marginTop: "2rem",
-    },
   }));
   const classes = useStyles();
   const theme = useTheme();
@@ -96,6 +91,7 @@ function NewCanvasForm() {
   //canvas state
   const [canvas, setBrush] = useState("#FCA5A5");
   const [brush, setThick] = useState(50);
+  const [isErase, setErase] = useState(false);
   //slider state
   const [value, setValue] = React.useState(12);
 
@@ -110,6 +106,16 @@ function NewCanvasForm() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const erase = () => {
+    setErase(true);
+    setBrush("#FFFFFF");
+  };
+
+  const draw = () => {
+    setErase(false);
+  };
+
   return (
     <div>
       <div className={classes.root}>
@@ -176,6 +182,12 @@ function NewCanvasForm() {
                 onChange={handleChange}
               />
             </Stack>
+            <Button variant="contained" onClick={erase}>
+              Erase
+            </Button>
+            <Button variant="contained" onClick={draw}>
+              Draw
+            </Button>
           </Box>
         </Drawer>
         <main
@@ -184,7 +196,10 @@ function NewCanvasForm() {
           })}
         >
           <div className={classes.drawerHeader} />
-          <Canvas brushColor={color.hex} brushRadius={value} />
+          <Canvas
+            brushColor={isErase ? canvas : color.hex}
+            brushRadius={value}
+          />
         </main>
       </div>
     </div>
