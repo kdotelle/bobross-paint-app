@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Canvas from "./Canvas.js";
 import "./styles/NewCanvasFormStyles.css";
 
@@ -26,7 +26,7 @@ import "react-color-palette/lib/css/styles.css";
 
 function NewCanvasForm() {
   const drawerWidth = 280;
-
+  //styles
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
@@ -93,15 +93,14 @@ function NewCanvasForm() {
   const classes = useStyles();
   const theme = useTheme();
   //drawer state
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   //color picker state
   const [color, setColor] = useColor("hex", "#121212");
   //canvas state
   const [canvas, setBrush] = useState("#FCA5A5");
-  const [brush, setThick] = useState(50);
   const [isErase, setErase] = useState(false);
   //slider state
-  const [value, setValue] = React.useState(12);
+  const [value, setValue] = useState(12);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -193,7 +192,8 @@ function NewCanvasForm() {
             <div className={classes.buttons}>
               <Button
                 className={classes.button}
-                variant="contained"
+                variant={isErase ? "contained" : "outlined"}
+                color="primary"
                 onClick={erase}
                 startIcon={<FormatPaintIcon />}
               >
@@ -201,7 +201,7 @@ function NewCanvasForm() {
               </Button>
               <Button
                 className={classes.button}
-                variant="contained"
+                variant={isErase ? "outlined" : "contained"}
                 onClick={draw}
                 startIcon={<BrushIcon />}
               >
