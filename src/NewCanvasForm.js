@@ -26,7 +26,7 @@ import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 
 function NewCanvasForm() {
-  const drawerWidth = 280;
+  const drawerWidth = 330;
   //styles
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,6 +62,8 @@ function NewCanvasForm() {
     },
     drawerPaper: {
       width: drawerWidth,
+      display: "flex",
+      alignItems: "center",
     },
     drawerHeader: {
       display: "flex",
@@ -86,6 +88,14 @@ function NewCanvasForm() {
         duration: theme.transitions.duration.enteringScreen,
       }),
       marginLeft: 0,
+    },
+    container: {
+      width: "90%",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "auto",
     },
     buttons: {
       width: "100%",
@@ -192,47 +202,49 @@ function NewCanvasForm() {
             </IconButton>
           </div>
           <Divider />
-          <ColorPicker
-            width={drawerWidth}
-            height={228}
-            color={color}
-            onChange={setColor}
-            hideHSV
-          />
-          <Typography>Brush Size</Typography>
-          <Box sx={{ width: 200 }}>
-            <Stack
-              spacing={2}
-              direction="row"
-              sx={{ mb: 1 }}
-              alignItems="center"
-            >
-              <Slider
-                aria-label="Volume"
-                value={value}
-                onChange={handleChange}
-              />
-            </Stack>
-            <div className={classes.buttons}>
-              <Button
-                className={classes.button}
-                variant={isErase ? "contained" : "outlined"}
-                color="primary"
-                onClick={erase}
-                startIcon={<FormatPaintIcon />}
+          <div className={classes.container}>
+            <ColorPicker
+              width={300}
+              height={228}
+              color={color}
+              onChange={setColor}
+              hideHSV
+            />
+            <Typography>Brush Size</Typography>
+            <Box sx={{ width: 200 }}>
+              <Stack
+                spacing={2}
+                direction="row"
+                sx={{ mb: 1 }}
+                alignItems="center"
               >
-                Erase
-              </Button>
-              <Button
-                className={classes.button}
-                variant={isErase ? "outlined" : "contained"}
-                onClick={draw}
-                startIcon={<BrushIcon />}
-              >
-                Draw
-              </Button>
-            </div>
-          </Box>
+                <Slider
+                  aria-label="Volume"
+                  value={value}
+                  onChange={handleChange}
+                />
+              </Stack>
+              <div className={classes.buttons}>
+                <Button
+                  className={classes.button}
+                  variant={isErase ? "contained" : "outlined"}
+                  color="primary"
+                  onClick={erase}
+                  startIcon={<FormatPaintIcon />}
+                >
+                  Erase
+                </Button>
+                <Button
+                  className={classes.button}
+                  variant={isErase ? "outlined" : "contained"}
+                  onClick={draw}
+                  startIcon={<BrushIcon />}
+                >
+                  Draw
+                </Button>
+              </div>
+            </Box>
+          </div>
         </Drawer>
         <main
           className={clsx(classes.content, {
