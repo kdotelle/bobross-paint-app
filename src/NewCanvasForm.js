@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Canvas from "./Canvas.js";
 import "./styles/NewCanvasFormStyles.css";
 
@@ -36,6 +37,9 @@ function NewCanvasForm() {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
     },
     appBarShift: {
       width: `calc(100% - ${drawerWidth}px)`,
@@ -88,6 +92,15 @@ function NewCanvasForm() {
     },
     button: {
       width: "50%",
+    },
+    navButtons: {
+      marginRight: "1rem",
+      "& a": {
+        textDecoration: "none",
+      },
+    },
+    navButton: {
+      margin: "0 0.5rem",
     },
   }));
   const classes = useStyles();
@@ -148,6 +161,17 @@ function NewCanvasForm() {
               Paint Like Bob Ross
             </Typography>
           </Toolbar>
+          <div className={classes.navButtons}>
+            <Link to="/">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.navButton}
+              >
+                Go Back
+              </Button>
+            </Link>
+          </div>
         </AppBar>
         <Drawer
           className={classes.drawer}

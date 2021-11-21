@@ -1,4 +1,5 @@
 import React, { Component, useRef } from "react";
+
 import Button from "@material-ui/core/Button";
 
 import CanvasDraw from "react-canvas-draw";
@@ -17,7 +18,6 @@ function Canvas(props) {
         canvasWidth="400"
         canvasHeight="300"
         lazyRadius={0}
-        enablePanAndZoom
         brushColor={props.brushColor}
         brushRadius={props.brushRadius}
       />
