@@ -6,14 +6,46 @@ import CanvasDraw from "react-canvas-draw";
 
 import "./styles/CanvasStyles.css";
 
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  clearButton: {
+    // to make a red delete button
+    color: theme.palette.getContrastText(theme.palette.error.main),
+    background: theme.palette.error.main,
+    width: "25%",
+  },
+  undoButton: {
+    // to make a red delete button
+    color: theme.palette.getContrastText(theme.palette.error.main),
+    background: theme.palette.warning.light,
+    width: "25%",
+  },
+  canvas: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderStyle: "solid",
+    borderColor: "black",
+    borderWidth: "3px",
+    margin: "5rem",
+    height: "75vh",
+  },
+  canvasButtonWrapper: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+}));
+
 function Canvas(props) {
   const myRef = useRef(null);
+  const classes = useStyles();
 
   return (
     <div>
       <CanvasDraw
         ref={myRef}
-        className="canvas"
+        className={classes.canvas}
         hideGrid
         canvasWidth="400"
         canvasHeight="300"
@@ -21,24 +53,23 @@ function Canvas(props) {
         brushColor={props.brushColor}
         brushRadius={props.brushRadius}
       />
-      <div className="canvasButtonWrapper">
+      <div className={classes.canvasButtonWrapper}>
         <Button
-          className="canvasButtons"
+          className={classes.clearButton}
           onClick={() => {
             myRef.current.clear();
           }}
           variant="contained"
-          color="primary"
         >
           Clear
         </Button>
+
         <Button
-          className="canvasButtons"
+          className={classes.undoButton}
           onClick={() => {
             myRef.current.undo();
           }}
           variant="contained"
-          color="secondary"
         >
           Undo
         </Button>
