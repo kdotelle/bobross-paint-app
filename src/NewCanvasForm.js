@@ -93,11 +93,12 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "auto",
+    alignItems: "center",
   },
-  buttons: {
+  buttonWrapper: {
     width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
   },
   button: {
     width: "50%",
@@ -233,7 +234,7 @@ function NewCanvasForm() {
                   onChange={handleChange}
                 />
               </Stack>
-              <div className={classes.buttons}>
+              <div className={classes.buttonWrapper}>
                 <Button
                   className={classes.button}
                   variant={isErase ? "contained" : "outlined"}

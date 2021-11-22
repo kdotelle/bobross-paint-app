@@ -5,6 +5,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import gif from "./styles/chrome-capture.gif";
 import "./styles/LandingPageStyles.css";
 
 function LandingPage() {
@@ -33,10 +34,27 @@ function LandingPage() {
             </div>
           </div>
         </div>
-        <div className="row align-items-md-stretch">
+        <div className="row align-items-md-stretch justify-content-between">
           <div className="col-md-6">
-            <div className="p-5 text-white bg-dark border rounded-3">
-              <h3 className="display-5 fw-bold">About Me</h3>
+            <div className="h-100 p-5 text-white bg-dark rounded-3">
+              <h3 className="display-5 fw-bold">About the App</h3>
+              <p>
+                An interactive Canvas app that allows users to draw directly on
+                the canvas. Users have the ability to pick a color via slider or
+                HEX and RGB codes with the implemented color picker. They also
+                have the option to adjust the brush size, undo brush strokes,
+                and clear the palette.
+              </p>
+            </div>
+          </div>
+          <div className="img col-md-6 p-5 rounded-3">
+            <img src={gif} alt="app demo" />
+          </div>
+        </div>
+        <div className="row align-items-md flex-row-reverse">
+          <div className="col-md-6">
+            <div className="p-5 bg-light border rounded-3">
+              <h3 className="display-5 fw-bold">Meet the Engineer</h3>
               <p>
                 I'm a driven Junior MERN Stack Developer based out of Northern
                 VA. I use web development to bridge my passions of creativity
@@ -46,7 +64,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
-      <footer className="footer mt-auto py-3 bg-light fixed-bottom">
+      <footer className="footer mt-auto bg-light fixed-bottom">
         <div className="container-fluid">
           <div className="row">
             <div className="col-4 text-center">

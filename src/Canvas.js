@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: "25%",
   },
   undoButton: {
-    // to make a red delete button
+    // to make a yellow undo button
     color: theme.palette.getContrastText(theme.palette.warning.light),
     background: theme.palette.warning.light,
     width: "25%",
@@ -28,12 +28,12 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "solid",
     borderColor: "black",
     borderWidth: "3px",
-    margin: "5rem",
     height: "75vh",
   },
   canvasButtonWrapper: {
     display: "flex",
     justifyContent: "space-between",
+    marginTop: "2rem",
   },
 }));
 
