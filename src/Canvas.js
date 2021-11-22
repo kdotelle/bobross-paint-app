@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   undoButton: {
     // to make a red delete button
-    color: theme.palette.getContrastText(theme.palette.error.main),
+    color: theme.palette.getContrastText(theme.palette.warning.light),
     background: theme.palette.warning.light,
     width: "25%",
   },

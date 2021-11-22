@@ -237,6 +237,7 @@ function NewCanvasForm() {
                 <Button
                   className={classes.button}
                   variant={isErase ? "outlined" : "contained"}
+                  color="secondary"
                   onClick={draw}
                   startIcon={<BrushIcon />}
                 >
