@@ -3,3 +3,16 @@ h1 {
   font-size: 64px;
   font-family: "Comforter Brush", cursive;
 }
+.root {
+  /* background by SVGBackgrounds.com */
+  background-color: #ffffff;
+  background-image: url("./subtle-prism.svg");
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: auto;
+  display: flex;
+  height: 100vh;
+}
+.footer {
+  opacity: 0.8;
+}

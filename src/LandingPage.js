@@ -9,7 +9,7 @@ import "./styles/LandingPageStyles.css";
 
 function LandingPage() {
   return (
-    <div>
+    <div className="root">
       <div className="container-fluid">
         <div className="p-5 mb-4 bg-light rounded-3">
           <h1 className="header fw-bold">Paint Like Bob Ross</h1>
@@ -51,9 +51,19 @@ function LandingPage() {
           <div className="row">
             <div className="col-4 text-center">
               <h5>Social</h5>
-              <LinkedInIcon color="primary" fontSize="large" />
-              <GitHubIcon fontSize="large" />
-              <TwitterIcon color="primary" frontSize="large" />
+              <a
+                className="btn "
+                href="https://www.linkedin.com/in/kristenlloyd/"
+              >
+                <LinkedInIcon color="primary" fontSize="large" />
+              </a>
+              <a className="btn" href="https://github.com/kdotelle">
+                {" "}
+                <GitHubIcon fontSize="large" />
+              </a>
+              <a className="btn" href="https://twitter.com/_ImKristen">
+                <TwitterIcon color="primary" frontSize="large" />
+              </a>
             </div>
             <div className="col-4 text-center">
               <p>Copyright © Kristen Lloyd 2021</p>

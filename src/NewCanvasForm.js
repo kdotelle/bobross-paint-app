@@ -111,6 +111,10 @@ const useStyles = makeStyles((theme) => ({
   navButton: {
     margin: "0 0.5rem",
   },
+  title: {
+    fontFamily: "Comforter Brush, cursive",
+    fontWeight: "bold",
+  },
 }));
 function NewCanvasForm() {
   const classes = useStyles();
@@ -167,7 +171,12 @@ function NewCanvasForm() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h4" noWrap color="error">
+            <Typography
+              variant="h4"
+              noWrap
+              color="error"
+              className={classes.title}
+            >
               Paint Like Bob Ross
             </Typography>
           </Toolbar>
