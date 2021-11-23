@@ -95,7 +95,7 @@ function NewCanvasForm(props) {
             <Link to="/">
               <Button
                 variant="contained"
-                color="secondary"
+                color="primary"
                 className={classes.navButton}
               >
                 Go Back
