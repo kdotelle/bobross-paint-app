@@ -25,11 +25,18 @@ import FormatPaintIcon from "@mui/icons-material/FormatPaint";
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 
+import background from "./styles/subtle-prism.svg";
+
 const drawerWidth = 330;
 //styles
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: "#ffc6aa",
+    backgroundImage: `url(${background})`,
+    backgroundAttachment: "fixed",
     display: "flex",
+    overflow: "auto",
+    height: "100vh",
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {

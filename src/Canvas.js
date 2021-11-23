@@ -43,7 +43,7 @@ function Canvas(props) {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.root}>
       <CanvasDraw
         ref={myRef}
         className={classes.canvas}
