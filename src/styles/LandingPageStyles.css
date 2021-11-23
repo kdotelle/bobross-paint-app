@@ -5,29 +5,14 @@ h1 {
 }
 .root {
   /* background by SVGBackgrounds.com */
-  background-color: #ffffff;
+  background-color: #ffc6aa;
   background-image: url("./subtle-prism.svg");
   background-attachment: fixed;
-  background-size: cover;
   overflow: auto;
   display: flex;
   height: 100vh;
 }
-.footer {
-  opacity: 0.8;
-  height: auto;
-  position: absolute;
-}
 
-.about {
-  display: flex;
-  flex-direction: column;
-}
-
-.img {
-  display: flex;
-  justify-content: center;
-}
 img {
   border-radius: 5px;
 }

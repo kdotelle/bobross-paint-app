@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "black",
     borderWidth: "3px",
     height: "75vh",
+    boxShadow: "0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%)",
   },
   canvasButtonWrapper: {
     display: "flex",
