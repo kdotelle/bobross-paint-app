@@ -4,7 +4,7 @@ import Canvas from "./Canvas.js";
 import "./styles/NewCanvasFormStyles.css";
 
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { withStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -25,107 +25,10 @@ import FormatPaintIcon from "@mui/icons-material/FormatPaint";
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 
-import background from "./styles/subtle-prism.svg";
+import styles from "./styles/NewCanvasFormStyles";
 
-const drawerWidth = 330;
-//styles
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: "#ffc6aa",
-    backgroundImage: `url(${background})`,
-    backgroundAttachment: "fixed",
-    display: "flex",
-    overflow: "auto",
-    height: "100vh",
-  },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: "none",
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-    height: "100vh",
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    display: "flex",
-    alignItems: "center",
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-end",
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-  container: {
-    width: "90%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  buttonWrapper: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  button: {
-    width: "50%",
-  },
-  navButtons: {
-    marginRight: "1rem",
-    "& a": {
-      textDecoration: "none",
-    },
-  },
-  navButton: {
-    margin: "0 0.5rem",
-  },
-  title: {
-    fontFamily: "Comforter Brush, cursive",
-    fontWeight: "bold",
-  },
-}));
-function NewCanvasForm() {
-  const classes = useStyles();
+function NewCanvasForm(props) {
+  const { classes } = props;
   const theme = useTheme();
   //drawer state
   const [open, setOpen] = useState(true);
@@ -280,4 +183,4 @@ function NewCanvasForm() {
   );
 }
 
-export default NewCanvasForm;
+export default withStyles(styles, { withTheme: true })(NewCanvasForm);

@@ -1,15 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Button,
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-} from "reactstrap";
-import SvgIcon from "@mui/material/SvgIcon";
+import { Button, Card, CardImg, CardBody, CardTitle } from "reactstrap";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -30,8 +21,8 @@ function LandingPage() {
               </h3>
               <p>
                 Discover the artist in you and embrace your creative side.
-                Transform the canvas with creativity and color. Draw free form
-                or fill the canvas with one click.
+                Transform the canvas with creativity and color. If you can think
+                it, you can create it.
               </p>
             </div>
             <div className="col-sm-4">
@@ -50,9 +41,9 @@ function LandingPage() {
               <p>
                 An interactive Canvas app that allows users to draw directly on
                 the canvas. Users have the ability to pick a color via slider or
-                HEX and RGB codes with the implemented color picker. They also
-                have the option to adjust the brush size, undo brush strokes,
-                and clear the palette.
+                HEX and RGB codes with the implemented color picker. The control
+                don't stop there. They also have the option to adjust the brush
+                size, undo brush strokes, and clear the palette.
               </p>
             </div>
           </div>
@@ -67,7 +58,8 @@ function LandingPage() {
               <p>
                 I'm a Junior MERN Stack Developer based out of Northern VA. I
                 use web development to bridge my passions of creativity and
-                problem solving.
+                problem solving. Feel free to connect on socials. Thank you for
+                visiting my web app.
               </p>
             </div>
           </div>
