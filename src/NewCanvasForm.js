@@ -161,7 +161,7 @@ function NewCanvasForm(props) {
                   onClick={draw}
                   startIcon={<BrushIcon />}
                 >
-                  Draw
+                  Paint
                 </Button>
               </div>
             </Box>
