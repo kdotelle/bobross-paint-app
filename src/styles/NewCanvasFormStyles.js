@@ -97,6 +97,7 @@ const styles = (theme) => ({
   title: {
     fontFamily: "Comforter Brush, cursive",
     fontWeight: "bold",
+    fontSize: "48px",
   },
 });
 
